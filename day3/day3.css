@@ -1,0 +1,92 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+body{
+    background-color: #f2f4f8 ;
+}
+
+#section1{
+    background-color: #0b1c3d ;
+    text-align: center;
+    color: white;
+    padding: 50px;
+    
+}
+
+#section1 h4{
+    font-style: italic;
+}
+
+#Aboutme{
+    background-color: white;
+    text-align: center;
+    padding: 50px;
+    margin: auto;
+    width: 70%;
+    border-radius: 10px ;
+}
+
+#Education{
+    background-color: #e3f2fd ;
+    text-align: center;
+    padding: 50px;
+    margin: auto;
+    width: 70%;
+    border-radius: 10px ;
+}
+
+#Education h4{
+    background-color: white;
+    padding: 20px;
+}
+
+#Skills{
+    background-color:#fff3e0;
+    text-align: center;
+    padding: 50px;
+    margin: auto;
+    width: 70%;
+    border-radius: 10px ;
+}
+#Skills h4{
+    background-color: white;
+    padding: 20px;
+}
+
+#Project{
+    background-color:#e0f2f1;
+    text-align: center;
+    padding: 50px;
+    margin: auto;
+    width: 70%;
+    border-radius: 10px ;
+}
+
+#Project h4{
+    background-color: white;
+    padding: 20px;
+}
+
+#contact{
+    background-color: #fffde7;
+    text-align: center;
+    padding: 50px;
+    margin: auto;
+    width: 70%;
+    border-radius: 10px ;
+}
+
+#contact h4{
+    background-color: white;
+    padding: 20px;
+}
+
+#footer{
+    background-color:#0b1c3d;
+    text-align: center;
+    padding: 40px;
+    color: white;
+}
