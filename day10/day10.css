@@ -1,0 +1,194 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,body{
+    height: 100%;
+    width: 100%;
+}
+/* type 1 grid practise */
+/* #main1{
+    background: #000;
+    height: 100%;
+    width: 100%;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 100px 1fr 1fr;
+    grid-gap: 10px;
+    padding: 10px 10px;
+    text-align: center;
+    grid-template-areas: "header header header"
+                         "section section section"
+                         "div1 div2 div3"
+    ;
+}
+
+header{
+    background-color: aquamarine;
+    grid-area: header;
+}
+
+section{
+    background-color: aqua;
+    grid-area: section;
+}
+
+#div1{
+    background-color: bisque;
+    grid-area: div1;
+}
+
+#div2{
+    background-color: blue;
+    grid-area: div2;
+}
+
+#div3{
+    background-color: red;
+    grid-area: div3;
+} */
+
+/* grid practise type 2 */
+/* main{
+    height: 100%;
+    width: 100%;
+    background: #000;
+    display: grid;
+    grid-template-columns: 450px 1fr;
+    grid-template-rows: 100px 1fr 1fr;
+    grid-gap: 20px;
+    padding: 10px 10px;
+    text-align: center;
+
+    grid-template-areas: "header header"
+                         "aside section"
+                         "figure figure"
+    ;
+}
+
+header{
+    background-color: chartreuse;
+    grid-area: header;
+}
+
+aside{
+    background-color: blueviolet;
+    grid-area: aside;
+}
+
+section{
+    background-color: coral;
+    grid-area: section;
+}
+
+figure{
+    background-color: darkslategray;
+    grid-area: figure;
+} */
+
+
+/* <!-- grid prsrtice type 3 --> */
+/* main{
+    background: #000;
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-gap: 10px;
+    padding 10px 10px;
+    text-align: center;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 50px 1fr 1fr 1fr;
+
+    grid-template-areas: "header header header"
+                         "section section section"
+                         "div1 div2  div4"
+                         "div1 div3 div4"
+    
+    ;
+
+}
+
+header{
+    background-color: blueviolet;
+    grid-area: header;
+}
+
+section{
+    background-color: azure;
+    grid-area: section;}
+
+#div1{
+    background-color: magenta;
+    grid-area: div1;
+}
+
+#div2{
+    background-color: bisque;
+    grid-area: div2;
+}
+
+#div3{
+    background-color: coral;
+    grid-area: div3;
+}
+
+#div4{
+    background-color: darkseagreen;
+    grid-area: div4;
+} */
+
+main{
+    background:white;
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-gap: 5px;
+    padding: 10px;
+    text-align: center;
+    
+    grid-template-areas: "left-top top-center top-right"
+                          "left-top center bottom-right"
+                          "left-bottom left-bottom bottom-right" 
+    ;
+}
+
+#left-top{
+    background-color: brown;
+    grid-area: left-top;
+    border-radius: 15px;
+}
+
+#top-center{
+    background-color: blue;
+    grid-area: top-center;
+    border-radius: 15px;
+}
+
+#center{
+    background-color: pink;
+    grid-area: center;
+    border-radius: 15px;
+}
+
+#top-right{
+    background-color: burlywood;
+    grid-area: top-right;
+    border-radius: 15px;
+}
+
+#left-bottom{
+    background-color: plum;
+    grid-area: left-bottom;
+    border-radius: 15px;
+}
+
+#bottom-right{
+    background-color: green;
+    grid-area: bottom-right;
+    border-radius: 15px;
+}
