@@ -1,0 +1,47 @@
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+}
+
+main {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  gap: 10px;
+}
+main section {
+  height: 100%;
+  background: red;
+  flex-grow: 1;
+  text-align: center;
+  color: white;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  transition: all 0.9s cubic-bezier(0.23, 1, 0.32, 1);
+}
+main section:hover {
+  flex-grow: 3;
+}
+main section:nth-child(1) {
+  background-image: url(./kholi.jpg);
+}
+main section:nth-child(2) {
+  background-image: url(./Goodbye\ Captain\ 🧢.jpg);
+}
+main section:nth-child(3) {
+  background-image: url(./AS.jpg);
+}
+main section:nth-child(4) {
+  background-image: url(./dhoni.jpg);
+}
+main section:nth-child(5) {
+  background-image: url(./Another\ ton!\ 🫡\ Shubman\ Gill!\ 💪🏻.jpg);
+}/*# sourceMappingURL=day11.css.map */
