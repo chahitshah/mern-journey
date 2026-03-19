@@ -1,0 +1,116 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: whitesmoke;
+    
+}
+
+html,body{
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    background-image: url(./mathsky.jpg);
+}
+h1{
+    display: flex;
+    justify-content: center;
+    margin: 2rem;
+    font-size: 1rem;
+    color: #000;
+    font-size: 18px;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+    
+    
+}
+
+#box{
+     background-color: rgba(255,255,255,0.9);
+    height: 30rem;
+    width: 20rem;
+    border-radius: 1rem;
+    h1{
+        color: black;
+    }
+
+    
+
+    #answerbox{
+        background-color: whitesmoke;
+        display: flex;
+        margin-top: 8px;
+        border-radius: 5px 5px 0 0;
+        border: 3px dashed black;
+        height: 5rem;
+        width: 19rem;
+        margin-left: 0.5rem;
+    }
+
+    #numpadbox{
+        
+        margin-top: 8px;
+        border-radius: 0 0 5px 5px;
+        border: 3px dashed black;
+        height: 23rem;
+        width: 19rem;
+        margin-left: 0.5rem;
+
+
+        .numpadbutton{
+            height: 100%;
+            gap: 6px;
+            padding: 4px 4px 4px 4px;
+            display: grid;
+            grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+
+            grid-template-areas:"NUMLK divide multiply minus"
+                                "seven eight   nine    plus"
+                                "four  five    six     plus"
+                                "one   two     three   enter"
+                                "zero  zero    delete  enter"   ;
+
+        button{
+            background: #000;
+            height: 100%;
+            border-radius: 5px;
+            width: 100%;
+            font-size: 20px;
+            margin: 1px;
+        }
+
+        .numlk{grid-area: NUMLK;}
+        .divide{grid-area: divide;}
+        .multiply{grid-area: multiply;}
+        .minus{grid-area:  minus;}
+
+        .seven{grid-area: seven;}
+        .eight{grid-area: eight;}
+        .nine{grid-area: nine;}
+        .plus{grid-area:  plus;}
+
+        .four{grid-area: four;}
+        .five{grid-area: five;}
+        .six{grid-area: six;}
+        
+
+        .one{grid-area: one;}
+        .two{grid-area: two;}
+        .three{grid-area: three;}
+        .enter{grid-area:  enter;}
+
+        .zero{grid-area: zero;}
+        .delete{grid-area: delete;}
+        
+    }
+
+    }
+
+    
+}
