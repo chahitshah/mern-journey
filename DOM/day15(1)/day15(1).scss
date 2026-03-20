@@ -1,0 +1,35 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+
+html,body{
+    height: 100%;
+    width: 100%;
+    background-color: black;
+}
+
+main{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    button{
+        height: 40px;
+        width: 70px;
+        border-radius: 5px;
+        position: relative;
+        z-index: 10;
+    }
+
+    button:active{
+        scale: 0.9;
+    }
+
+    h1{
+        white-space: nowrap;
+    }
+}
