@@ -1,0 +1,48 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+}
+
+.container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.container #box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: rgb(0, 0, 0);
+  height: 300px;
+  width: 300px;
+  border-radius: 15px;
+  overflow: hidden;
+}
+.container #box h1 {
+  color: whitesmoke;
+  font-size: 70px;
+  text-align: center;
+}
+.container #box h3 {
+  color: whitesmoke;
+  font-size: 50px;
+  text-align: center;
+}
+.container button {
+  padding: 10px 10px;
+  border-radius: 5px;
+  margin-top: 15px;
+}
+.container button:hover {
+  background-color: rgb(112, 109, 109);
+  color: whitesmoke;
+}/*# sourceMappingURL=day15.css.map */
