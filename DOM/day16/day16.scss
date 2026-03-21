@@ -1,0 +1,76 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,body{
+    height: 100%;
+    width: 100%;
+    background-image:url(./30+\ Presentation\ Background\ Images\ for\ PowerPoint.jpg);
+    background-position: center;
+    background-size: cover;
+}
+
+main{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .card{
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+
+        text-align: center;
+        
+        
+        height: 250px;
+        width: 500px;
+        background-color: whitesmoke;
+        border-radius: 50px;
+
+        .outer{
+            height: 20px;
+            width: 90%;
+            background-color: rgb(167, 167, 167);
+            border-radius: 50px;
+            margin-top: 25px;
+            
+        }
+        
+        .inner{
+            height: 20px;
+            width: 0%;
+            background-color:#9C9ACB;
+            border-radius: 50px;
+        }
+
+        .info{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            align-self: center;
+            width: 90%;
+            margin-top: 20px;
+
+            button{
+                padding: 10px 10px;
+                border-radius: 50px;
+                
+            }
+
+            button:hover{
+                background: #C0B5D7;
+            }
+
+            button:active{
+                scale: 0.9;
+            }
+            
+        }
+    }
+}
