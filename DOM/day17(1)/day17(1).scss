@@ -1,0 +1,72 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+    background-color: azure;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+
+    .piano {
+        position: relative;
+
+        // 🎹 White Keys
+        .whitekeys {
+            display: flex;
+
+            .key-white {
+                width: 60px;
+                height: 200px;
+                border: 1px solid black;
+                background: white;
+                border-radius: 0 0 6px 6px;
+                cursor: pointer;
+
+                &:active {
+                    background: #ddd;
+                }
+            }
+        }
+
+        // ⚫ Black Keys
+        .blackkeys {
+            position: absolute;
+            top: 0;
+            left: 0;
+
+            .key-black {
+                position: absolute;
+                width: 40px;
+                height: 120px;
+                background: black;
+                border-radius: 0 0 4px 4px;
+                z-index: 2;
+                cursor: pointer;
+                box-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+
+                &:active {
+                    background: #333;
+                }
+            }
+
+            // 🎯 Correct Piano Positioning
+            .key-black:nth-child(1) { left: 45px; }   // C#
+            .key-black:nth-child(2) { left: 105px; }  // D#
+
+            // (skip E)
+
+            .key-black:nth-child(3) { left: 225px; }  // F#
+            .key-black:nth-child(4) { left: 285px; }  // G#
+            .key-black:nth-child(5) { left: 345px; }  // A#
+        }
+    }
+}

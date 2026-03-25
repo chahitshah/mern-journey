@@ -1,0 +1,68 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  background-color: azure;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+main .piano {
+  position: relative;
+}
+main .piano .whitekeys {
+  display: flex;
+}
+main .piano .whitekeys .key-white {
+  width: 60px;
+  height: 200px;
+  border: 1px solid black;
+  background: white;
+  border-radius: 0 0 6px 6px;
+  cursor: pointer;
+}
+main .piano .whitekeys .key-white:active {
+  background: #ddd;
+}
+main .piano .blackkeys {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+main .piano .blackkeys .key-black {
+  position: absolute;
+  width: 40px;
+  height: 120px;
+  background: black;
+  border-radius: 0 0 4px 4px;
+  z-index: 2;
+  cursor: pointer;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+main .piano .blackkeys .key-black:active {
+  background: #333;
+}
+main .piano .blackkeys .key-black:nth-child(1) {
+  left: 45px;
+}
+main .piano .blackkeys .key-black:nth-child(2) {
+  left: 105px;
+}
+main .piano .blackkeys .key-black:nth-child(3) {
+  left: 225px;
+}
+main .piano .blackkeys .key-black:nth-child(4) {
+  left: 285px;
+}
+main .piano .blackkeys .key-black:nth-child(5) {
+  left: 345px;
+}/*# sourceMappingURL=day17(1).css.map */
