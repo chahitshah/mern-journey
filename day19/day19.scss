@@ -1,0 +1,42 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,body{
+    height: 100%;
+    width: 100%;
+    
+}
+
+:root{
+        --x: 100px;
+        --y: 100px;
+    }
+
+main{
+    height: 100%;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+
+    
+    
+
+    video{
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        top: 0;
+        left: 0;
+        object-fit: cover;
+        object-position: center;
+        z-index: -1;
+
+        
+    }
+    background: radial-gradient( 300px at var(--x) var(--y),rgba(255, 255, 255, 0)
+    ,rgb(15, 15, 15));
+
+}
