@@ -1,0 +1,154 @@
+// *{
+//     margin: 0;
+//     padding: 0;
+//     box-sizing: border-box;
+//     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+//     color: whitesmoke;
+// }
+
+// html,body{
+//     height: 100%;
+//     width: 100%;
+// }
+
+// @property --rotate{
+//     syntax: '<angle>';
+//     initial-value: 0deg;
+//     inherits: false;
+// }
+
+// @keyframes rotatebg{
+//     from{
+//         --rotate:0deg;
+//     }
+
+//     to{
+//         --rotate:360deg;
+//     }
+// }
+
+// main{
+//     height: 100vh;
+//     background: #000;
+//     display: flex;
+//     align-items: center;
+//     justify-content: center;
+
+//     .card{
+//         height: 380px;
+//         width: 250px;
+
+//         border: 0 solid transparent; // ✅ FIX (was 0)
+//         border-radius: 20px;
+
+//         overflow: hidden;
+//         box-shadow: 0 0 0px rgb(60, 60, 235);
+
+//         background: linear-gradient(black, black) padding-box,
+//                     conic-gradient(from var(--rotate), black, rgb(60, 60, 235), black) border-box;
+
+//         padding: 10px;
+
+//         animation: rotatebg 3s linear infinite; // ✅ smoother
+//         animation-play-state: paused;
+
+//         transition: all 0.2s linear; // ✅ smoother
+
+//         text-shadow: 0 0 0px rgb(60, 60, 235);
+//         color: white;
+
+//         display: flex;
+//         flex-direction: column;
+
+//         img{
+//             height: 65%;
+//             width: 100%;
+//             object-fit: cover;
+//             object-position: center;
+//             border-radius: 12px;
+//         }
+
+//         h1{
+//             font-size: 18px;
+//             padding: 5px 10px;
+//         }
+
+//         p{
+//             font-size: 12px;
+//             padding: 0 10px 10px;
+//         }
+
+//         &:hover{
+//             animation-play-state: running;
+//             border-width: 5.5px; // ✅ prevent jump
+//             box-shadow: 0 0 50px rgb(4, 4, 221);
+
+//             h1,p{
+//                 color: rgb(140, 140, 255); // ✅ lighter blue (fix glow visibility)
+//                 text-shadow: 0 0 30px rgb(44, 44, 218); // ✅ stronger bloom
+//             }
+//         }
+//     }
+// }
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: whitesmoke;
+}
+
+html,body{
+    height: 100%;
+    width: 100%;
+    anchor-name: --some-anchor;
+}
+
+
+main{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #000;
+    gap: 10px;
+    
+    
+    
+
+    .box{
+        height: 70px;
+        width: 200px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 20px;
+        text-transform: uppercase;
+        color: white;
+        font-weight: 800;
+        
+    }
+
+    .box:hover{
+        anchor-name: --some-anchor;
+        color: ;
+    }
+
+    
+    .anchor{
+        background-color: rgb(83, 82, 82);
+        position: absolute;
+        top: anchor(top);
+        left: anchor(left);
+        bottom: anchor(bottom);
+        right: anchor(right);
+        border-radius: 10px;
+        position-anchor: --some-anchor;
+        mix-blend-mode: difference;
+        pointer-events: none;
+        transition: all 0.25s ease;
+    }
+
+    
+}
