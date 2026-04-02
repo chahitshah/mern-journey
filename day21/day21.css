@@ -33,7 +33,6 @@ main .box {
 }
 main .box:hover {
   anchor-name: --some-anchor;
-  color: whitesmoke;
 }
 main .anchor {
   background-color: rgb(83, 82, 82);
