@@ -135,3 +135,229 @@
 // // - Practice in plain JavaScript using `setTimeout` and callbacks to understand the flow before converting to Promises/async–await.
 // // Displaying Day 60 Question Sheet.md.
 
+// function greetUser(name,cb){
+//     setTimeout(function(){
+//         cb("hello,"+name);
+//     },1000)
+// }
+
+// greetUser("john",function(data){
+//     console.log(data);
+//     console.log("Callback executed");
+// })
+
+// function calculate(a,b,cb){
+//     let result=cb(a,b);
+//     return result;
+// }
+// function add(x,y){
+//     return x+y;
+// }
+// function multiply(x,y){
+//     return x*y;
+// }   
+
+// console.log(calculate(5,3,add));
+// console.log(calculate(5,3,multiply));
+
+// function fetchData(cb)
+// {
+//     setTimeout(function(){
+//         console.log("data loaded");
+//         cb();
+//     },2000)
+// }
+
+// fetchData(function(data){
+//     console.log(data);
+// })
+
+// function processUser(name,cb){
+//     console.log(name);
+//     setTimeout(function(){
+//         cb(name.toUpperCase());
+//     },1000)
+// }
+
+// processUser("john",function(data){
+//     console.log(data);
+// })
+
+// function getuserdata(userID,cb){
+//     setTimeout(function(){
+//         cb({id:userID,name:"john"});
+//     },2000)
+// }
+
+// getuserdata(1,function(data){
+//     console.log(data);
+// })
+
+// function LoginUser(username,cb){
+//     setTimeout(() => {
+//         cb({username})
+//     }, 1000);
+// }
+
+// function getPosts(user,cb){
+//     setTimeout(function(){
+//         cb(['post1','post2'])
+//     },1000)
+// }
+
+// LoginUser("john",function(data){
+//     console.log("User :"+data.username);
+//     getPosts(data,function(posts){
+//         console.log("post :",posts);
+//     })
+// })
+
+// function divideNumbers(a, b, cb) {
+//     if (b === 0) {
+//         cb("Error: Cannot divide by zero", null);
+//     } else {
+//         cb(null, a / b);
+//     }
+// }
+
+// divideNumbers(10, 0, function (error, result) {
+//     if (error) {
+//         console.log(error);
+//     } else {
+//         console.log(result);
+//     }
+// });
+
+// divideNumbers(10, 2, function (error, result) {
+//     if (error) {
+//         console.log(error);
+//     } else {
+//         console.log(result);
+//     }
+// });
+
+// function getUset(cb){
+//     let result=Math.random() > 0.5; // Simulating success or failure randomly
+//     setTimeout(function(){
+//         if(result){
+//             cb(null,{id:1,name:"john"});
+//         }
+//         else{
+//              cb("Error fetching user", null); 
+//         }
+//     },1000)
+// }
+
+// function getposts(user,cb){
+//     let result=true;
+//     setTimeout(function(){
+//         if(result){
+//             cb(null,["post 1", "post 2"]);
+//         }
+//         else{
+//              cb("Error fetching user", null);
+//         }
+//     },1000)
+// }
+
+// getUset(function(error,result){
+//     if(error)
+// //     {
+//         console.log(error);
+//     }
+//     else{
+//         console.log("User :",result.name);
+//     getposts(result,function(error,posts){
+//         if(error){
+//             console.log(error);
+//         }
+//         else{
+//             console.log("posts:",posts);
+//         }
+//     })
+//     }
+// })
+
+// function getUser(userId,cb){
+//     let result=Math.random()>0.5;
+//     setTimeout(function(){
+//         if(result){
+//             cb(null,{id:userId,name:"John"});
+//         }
+//         else{
+//             cb("User not Found!!!",null);
+//         }
+//     },1000)
+// }
+
+// function getPosts(user,cb){
+//     let result=Math.random()>0.5;
+//     setTimeout(function(){
+//         if(result){
+//             cb(null,["post 1","post 2"]);
+//         }
+//         else{
+//             cb("Posts not found!!!",null)
+//         }
+//     },1000)
+// }
+
+// function getComments(post,cb)
+
+// {
+//     let result=Math.random()>0.5;
+//     setTimeout(function(){
+//         if(result){
+//             cb(null,["comment 1","comment 2"]);
+//         }
+//         else{
+//             cb("comments not found!!!",null)
+//         }
+//     },1000)
+// }
+
+// function getLikes(comment,cb)
+// {
+//     let result=Math.random()>0.5;
+//     setTimeout(function(){
+//         if(result){
+//             cb(null,10);
+//         }
+//         else{
+//             cb("Likes not found!!!",null)
+//         }
+//     },1000)
+// }
+
+// getUser(1,function(error,user){
+//     if(error){
+//         console.log(error);
+//     }
+//     else{
+//         console.log("User:",user.name);
+//         getPosts(user,function(error,posts){
+//             if(error){
+//                 console.log(error);
+//             }
+//             else{
+//                 console.log("Posts:",posts);
+//                 getComments(posts,function(error,comments){
+//                     if(error){
+//                         console.log(error);
+//                     }
+//                     else{
+//                         console.log("Comments:",comments);
+//                         getLikes(comments,function(error,likes){
+//                             if(error){
+//                                 console.log(error);
+//                             }
+//                             else{
+//                                 console.log("Likes:",likes)
+//                             }
+//                         })
+//                     }
+//                 })
+//             }
+//         })
+//     }
+// })

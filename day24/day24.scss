@@ -1,0 +1,125 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+}
+
+main {
+    height: 100vh;
+    width: 100%;
+    background-image: url("./Windows 11 Lock Screen Wallpaper 4K.jpg");
+    background-size: cover;
+    background-position: center;
+
+    .navbar {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+
+        height: 48px;
+        width: 100%;
+
+        background: rgba(255, 255, 255, 0.6);
+        backdrop-filter: blur(20px);
+
+        border-top: 1px solid rgba(0, 0, 0, 0.1);
+        z-index: 100;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .icon {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+
+            .icon-box {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                width: 40px;
+                height: 40px;
+
+                border-radius: 8px;
+                cursor: pointer;
+                transition: all 0.2s ease;
+
+                i {
+                    font-size: 20px;
+                }
+
+                &:hover {
+                    background: rgba(255, 255, 255, 0.2);
+                }
+            }
+
+            #searchbar {
+                display: flex;
+                align-items: center;
+                gap: 8px;
+
+                height: 32px;
+                width: 180px;
+                padding: 0 12px;
+
+                background: rgba(255, 255, 255, 0.8);
+                border-radius: 20px;
+
+                color: gray;
+                font-size: 14px;
+
+                i {
+                    font-size: 16px;
+                }
+
+                span {
+                    color: #555;
+                    gap: 10px;
+                }
+            }
+        }
+    }
+
+    
+    .content{
+        height: 450px;
+        width: 450px;
+        background: #e2e2e2;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .info{
+        position: absolute;
+        display: none; //imp
+        
+        height: 250px;
+        width: 200px;
+        background: #e2e2e2;
+
+        .windowinfo{
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            cursor: pointer;
+
+            p:hover{
+                
+                background: rgba(255, 255, 255, 0.8);
+            
+            
+            }
+            
+        }
+        
+    }
+}
