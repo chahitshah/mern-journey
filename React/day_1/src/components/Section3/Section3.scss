@@ -1,0 +1,65 @@
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+main,body{
+    height: 100%;
+    width: 100%;
+}
+
+.section3{
+    height: 100%;
+    width: 100%;
+
+    .cards{
+        margin-top: 30px;
+        margin-left: 30px;
+        margin-right: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        
+        
+        .card1{
+            height: 200px;
+            width: 250px;
+            background-color: bisque;
+            border-radius: 15px;
+            img{
+                height: 100%;
+                width: 100%;
+            }
+            overflow: hidden;
+        }
+
+        .card2{
+            height: 200px;
+            width: 250px;
+            background-color: bisque;
+            border-radius: 15px;
+
+            img{
+                height: 100%;
+                width: 100%;
+            }
+            overflow: hidden;
+        }
+
+        .card3{
+            height: 200px;
+            width: 250px;
+            border-radius: 15px;
+            background-color: bisque;
+
+            img{
+                height: 100%;
+                width: 100%;
+            }
+            overflow: hidden;
+        }
+    }
+}

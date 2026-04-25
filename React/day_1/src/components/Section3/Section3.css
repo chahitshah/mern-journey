@@ -1,0 +1,62 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+main, body {
+  height: 100%;
+  width: 100%;
+}
+
+.section3 {
+  height: 100%;
+  width: 100%;
+}
+.section3 .cards {
+  margin-top: 30px;
+  margin-left: 30px;
+  margin-right: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.section3 .cards .card1 {
+  height: 200px;
+  width: 250px;
+  background-color: bisque;
+  border-radius: 15px;
+}
+.section3 .cards .card1 img {
+  height: 100%;
+  width: 100%;
+}
+.section3 .cards .card1 {
+  overflow: hidden;
+}
+.section3 .cards .card2 {
+  height: 200px;
+  width: 250px;
+  background-color: bisque;
+  border-radius: 15px;
+}
+.section3 .cards .card2 img {
+  height: 100%;
+  width: 100%;
+}
+.section3 .cards .card2 {
+  overflow: hidden;
+}
+.section3 .cards .card3 {
+  height: 200px;
+  width: 250px;
+  border-radius: 15px;
+  background-color: bisque;
+}
+.section3 .cards .card3 img {
+  height: 100%;
+  width: 100%;
+}
+.section3 .cards .card3 {
+  overflow: hidden;
+}/*# sourceMappingURL=Section3.css.map */

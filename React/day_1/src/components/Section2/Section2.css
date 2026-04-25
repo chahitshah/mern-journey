@@ -1,0 +1,25 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, main {
+  height: 100%;
+  width: 100%;
+}
+
+.section2 .info {
+  margin-top: 15px;
+  display: flex;
+  justify-content: space-around;
+}
+.section2 .info button {
+  border-radius: 50px;
+  height: 30px;
+  padding: 0 50px 0 50px;
+  background: none;
+}
+.section2 .info p {
+  width: 50%;
+}/*# sourceMappingURL=Section2.css.map */

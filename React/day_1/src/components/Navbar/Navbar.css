@@ -1,0 +1,44 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+main, body {
+  height: 100%;
+  width: 100%;
+}
+
+.navbar {
+  height: 70px;
+  width: 100%;
+}
+.navbar .section {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.navbar .section .menu {
+  margin-top: 20px;
+  display: flex;
+  gap: 50px;
+  align-items: center;
+}
+.navbar .section .menu h3 {
+  font-weight: 800;
+}
+.navbar .section .menu h4 {
+  font-weight: 400;
+}
+.navbar .section .menu .About {
+  border: 0.5px solid black;
+  border-radius: 15px;
+  padding: 5px;
+}
+.navbar .section .btn {
+  padding: 10px 10px 10px 10px;
+  border-radius: 60px;
+  background-color: #0D1A2D;
+  color: whitesmoke;
+  border: none;
+}/*# sourceMappingURL=Navbar.css.map */
