@@ -1,0 +1,60 @@
+
+const express = require("express")
+
+const app = express()
+
+const noteModel = require("./models/note.model")
+
+const cors = require("cors")
+
+app.use(cors())
+app.use(express.json())
+
+
+app.post('/api/notes',async (req,res)=>{
+    const {title,desc}= req.body
+
+    const note = await noteModel.create({
+        title,desc
+    })
+
+    res.status(201).json({
+        message : "note created successfully",
+        note
+    })
+
+
+})
+
+app.get('/api/notes', async(req,res)=>{
+    const notes = await noteModel.find()
+
+    res.status(200).json({
+        message : "notes fetch successfully",
+        notes
+    })
+})
+
+app.delete('/api/notes/:id',async (req,res)=>{
+
+    const id = req.params.id
+    await noteModel.findByIdAndDelete(id)
+
+    res.status(200).json({
+        message : "note delete successfully"
+    })
+})
+
+app.patch('/api/notes/:id',async (req,res)=>{
+    const id = req.params.id
+    const {desc} = req.body
+
+    await noteModel.findByIdAndUpdate(id,{desc})
+
+    res.status(200).json({
+        message : "note updated successfully"
+    })
+
+})
+
+module.exports = app
