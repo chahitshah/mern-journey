@@ -1,0 +1,73 @@
+.navbar{
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    padding: 20px;
+}
+
+.navbar .addnote{
+    height: 40px;
+    width: 40px;
+    background-color: black;
+    color: white;
+    border: 2px solid whitesmoke;
+    border-radius: 50%;
+    font-size: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.notes-container{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 0 20px 20px;
+}
+
+.notes{
+    height: 250px;
+    width: 250px;
+    background-color: #FFD6C0;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.notes .content{
+    flex: 1;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.notes .modification{
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    padding: 15px;
+}
+
+.notes .modification button{
+    height: 32px;
+    width: 32px;
+    border: 2px solid rgba(54, 51, 51, 0.863);
+    border-radius: 50%;
+    background-color: white;
+    color: black;
+    font-size: 17px;
+    cursor: pointer;
+}
+
+.notes .modification .deletebutton:hover{
+    background-color: red;
+    color: white;
+}
+
+.notes .modification .editbutton:hover{
+    background-color: black;
+    color: whitesmoke;
+}
