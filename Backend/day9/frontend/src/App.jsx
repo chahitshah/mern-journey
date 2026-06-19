@@ -13,7 +13,7 @@ const App = () => {
 
   function Fetchnote()
   {
-    axios.get("http://localhost:3000/api/notes")
+    axios.get("https://mern-journey-57h8.onrender.com/api/notes")
       .then((res) => {
         setnotes(res.data.notes)
       })
@@ -28,7 +28,7 @@ const App = () => {
     const title = formData.get("title")
     const description = formData.get("description")
 
-    axios.post("http://localhost:3000/api/notes", {
+    axios.post("https://mern-journey-57h8.onrender.com/api/notes", {
       title,
       description
     })
@@ -41,7 +41,7 @@ const App = () => {
 
   function handelDelete(noteID)
   {
-    axios.delete(`http://localhost:3000/api/notes/${noteID}`)
+    axios.delete(`https://mern-journey-57h8.onrender.com/api/notes/${noteID}`)
      .then((res)=>{
       console.log(res.data)
       Fetchnote()
@@ -63,7 +63,7 @@ const App = () => {
     const formData = new FormData(e.target)
     const description = formData.get("description")
 
-    axios.patch(`http://localhost:3000/api/notes/${selectedNote._id}`, {
+    axios.patch(`https://mern-journey-57h8.onrender.com/api/notes/${selectedNote._id}`, {
       description
     })
     .then((res)=>{
