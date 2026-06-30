@@ -1,6 +1,6 @@
 const express = require("express")
 const cookieParser=require("cookie-parser")
-const authRouter=require("../srs/routes/auth.routes")
+const authRouter=require("../src/routes/auth.routes")
 const postRouter=require("./routes/post.routes")
 
 const app = express()
