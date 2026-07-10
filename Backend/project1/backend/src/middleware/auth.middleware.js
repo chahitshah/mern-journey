@@ -9,7 +9,7 @@ async function identifyUser(req, res, next) {
         })
     }
 
-    let decoded
+    let decoded = null
     try {
         decoded = jwt.verify(token, process.env.JWT_SECRET)
     } catch (err) {
