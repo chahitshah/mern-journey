@@ -11,4 +11,10 @@ export const route = createBrowserRouter([
     path: '/register',
     element: <Register />,
   },
+
+  {
+
+    path : '/',
+    element : <h1>Welcome to the App</h1>
+  }
 ])
