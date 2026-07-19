@@ -142,7 +142,7 @@ async function requestaccept(req,res)
     await findrequest.save()
 
     res.status(200).json({
-        message : "accept requesrt successfully"
+        message : "accept request successfully"
     })
 
 }
