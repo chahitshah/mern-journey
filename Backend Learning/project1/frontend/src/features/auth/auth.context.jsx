@@ -36,6 +36,15 @@ export function AuthProvider({ children }) {
         }
     }
 
+    const handleGetMe = async()=>{
+        const data = await getMe()
+        setuser(data.user)
+    }
+
+    useEffect(()=>{
+        handleGetMe()
+    },[])
+
     return (
         <AuthContext.Provider value={{ user, loading, handleLogin, handleRegister }}>
             {children}

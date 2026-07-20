@@ -25,13 +25,17 @@ const Register = () => {
         })
     }
 
-    if(loading)
-    {
-      return(
-        <h1>Loading.....</h1>
-      )
+    if (loading) {
+        return (
+            <main className="auth-page loading-state">
+                <div className="loader-card">
+                    <div className="spinner"></div>
+                    <h2>Creating your AURA account...</h2>
+                    <p>Preparing space context</p>
+                </div>
+            </main>
+        )
     }
-
 
   return (
     <main className="auth-page">
@@ -45,14 +49,26 @@ const Register = () => {
         </div>
 
         <div className="auth-card">
-          <div className="auth-brand">Pulse</div>
+          <div className="auth-brand">
+            <span className="brand-glow"></span>
+            AURA
+          </div>
           <h1>Register</h1>
           <p className="auth-subtitle">Create a new account with username, email, and password</p>
 
           <form onSubmit={handleSubmit} className="auth-form">
-            <input onInput={(e)=>{setusername(e.target.value)}} className="auth-input" type="text" placeholder="Username" />
-            <input onInput={(e)=>{setemail(e.target.value)}} className="auth-input" type="email" placeholder="Email" />
-            <input onInput={(e)=>{setpassword(e.target.value)}} className="auth-input" type="password" placeholder="Password" />
+            <div className="input-field-group">
+                <i className="ri-user-line field-icon"></i>
+                <input onInput={(e)=>{setusername(e.target.value)}} className="auth-input" type="text" placeholder="Username" required />
+            </div>
+            <div className="input-field-group">
+                <i className="ri-mail-line field-icon"></i>
+                <input onInput={(e)=>{setemail(e.target.value)}} className="auth-input" type="email" placeholder="Email" required />
+            </div>
+            <div className="input-field-group">
+                <i className="ri-lock-password-line field-icon"></i>
+                <input onInput={(e)=>{setpassword(e.target.value)}} className="auth-input" type="password" placeholder="Password" required />
+            </div>
             <button className="auth-button" type="submit">Register</button>
           </form>
 

@@ -24,11 +24,17 @@ const Login = () => {
     }
 
     const { handleLogin,loading } = useAuth()
-    if(loading)
-    {
-      return (
-        <h1>Loading......</h1>
-      )
+    
+    if (loading) {
+        return (
+            <main className="auth-page loading-state">
+                <div className="loader-card">
+                    <div className="spinner"></div>
+                    <h2>Logging into AURA...</h2>
+                    <p>Securing your workspace</p>
+                </div>
+            </main>
+        )
     }
 
   return (
@@ -43,13 +49,22 @@ const Login = () => {
         </div>
 
         <div className="auth-card">
-          <div className="auth-brand">Pulse</div>
+          <div className="auth-brand">
+            <span className="brand-glow"></span>
+            AURA
+          </div>
           <h1>Login</h1>
           <p className="auth-subtitle">Use your username and password to continue</p>
 
           <form onSubmit={handleSubmit} className="auth-form">
-            <input onInput={(e)=>{setusername(e.target.value)}} className="auth-input" type="text" placeholder="Username" />
-            <input onInput={(e)=>{setpassword(e.target.value)}} className="auth-input" type="password" placeholder="Password" />
+            <div className="input-field-group">
+                <i className="ri-user-line field-icon"></i>
+                <input onInput={(e)=>{setusername(e.target.value)}} className="auth-input" type="text" placeholder="Username" required />
+            </div>
+            <div className="input-field-group">
+                <i className="ri-lock-password-line field-icon"></i>
+                <input onInput={(e)=>{setpassword(e.target.value)}} className="auth-input" type="password" placeholder="Password" required />
+            </div>
             <button className="auth-button" type="submit">Login</button>
           </form>
 

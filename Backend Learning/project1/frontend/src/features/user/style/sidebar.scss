@@ -1,0 +1,252 @@
+.sidebar-container {
+  width: 300px;
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 24px;
+  padding: 24px;
+  box-shadow: 
+    0 16px 48px rgba(15, 23, 42, 0.05),
+    inset 0 1px 1px rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(20px);
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  height: fit-content;
+  position: sticky;
+  top: 104px;
+  font-family: var(--font-body);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+
+  &:hover {
+    border-color: var(--border-hover);
+    box-shadow: 
+      0 20px 60px rgba(15, 23, 42, 0.08),
+      inset 0 1px 1px rgba(255, 255, 255, 0.9);
+  }
+
+  .sidebar-section {
+    display: flex;
+    flex-direction: column;
+
+    h3 {
+      font-family: var(--font-title);
+      font-size: 0.8rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--text-secondary);
+      margin: 0 0 16px 0;
+      border-bottom: 1px solid rgba(15, 23, 42, 0.06);
+      padding-bottom: 8px;
+    }
+
+    .card-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .empty-message {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin: 0;
+      text-align: center;
+      padding: 10px 0;
+      font-style: italic;
+    }
+  }
+
+  // Follow Requests Section
+  .requests {
+    .request-card {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      padding: 14px;
+      background: rgba(15, 23, 42, 0.02);
+      border-radius: 16px;
+      border: 1px solid rgba(15, 23, 42, 0.03);
+      transition: all 0.25s ease;
+
+      &:hover {
+        background: rgba(15, 23, 42, 0.04);
+        border-color: rgba(15, 23, 42, 0.06);
+        transform: translateY(-1.5px);
+      }
+
+      .user-details {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        .avatar-placeholder {
+          width: 32px;
+          height: 32px;
+          border-radius: 50%;
+          background: var(--gradient-primary);
+          color: #ffffff;
+          font-family: var(--font-title);
+          font-weight: 700;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 0.85rem;
+          box-shadow: 0 4px 10px rgba(249, 115, 22, 0.25);
+        }
+
+        .username {
+          font-weight: 600;
+          color: var(--text-primary);
+          font-size: 0.9rem;
+          letter-spacing: -0.01em;
+        }
+      }
+
+      .actions {
+        display: flex;
+        gap: 8px;
+
+        button {
+          flex: 1;
+          padding: 7px 12px;
+          font-size: 0.78rem;
+          font-weight: 700;
+          border-radius: 10px;
+          cursor: pointer;
+          transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+          border: none;
+          outline: none;
+        }
+
+        .accept-btn {
+          background: var(--gradient-primary);
+          color: #ffffff;
+          box-shadow: 0 4px 12px rgba(249, 115, 22, 0.3);
+
+          &:hover {
+            box-shadow: 
+              0 6px 16px rgba(249, 115, 22, 0.4),
+              0 0 10px rgba(236, 72, 153, 0.2);
+            transform: scale(1.02);
+          }
+
+          &:active {
+            transform: scale(0.98);
+          }
+        }
+
+        .reject-btn {
+          background: rgba(15, 23, 42, 0.05);
+          color: var(--text-secondary);
+
+          &:hover {
+            background: rgba(15, 23, 42, 0.1);
+            color: var(--text-primary);
+          }
+
+          &:active {
+            transform: scale(0.98);
+          }
+        }
+      }
+    }
+  }
+
+  // Following & Suggestions Sections
+  .following-count, .suggestions {
+    .card-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .suggestion-card {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 6px 0;
+      transition: transform 0.2s ease;
+
+      .user-info {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+
+        .avatar, .avatar-placeholder {
+          width: 36px;
+          height: 36px;
+          border-radius: 50%;
+          object-fit: cover;
+          border: 1.5px solid #f97316;
+          padding: 1.5px;
+          transition: transform 0.2s ease;
+        }
+
+        .avatar-placeholder {
+          background: var(--gradient-primary);
+          color: #ffffff;
+          font-family: var(--font-title);
+          font-weight: 700;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 0.9rem;
+          border: none;
+          padding: 0;
+        }
+
+        .username {
+          font-weight: 600;
+          color: var(--text-primary);
+          font-size: 0.9rem;
+          letter-spacing: -0.01em;
+        }
+      }
+
+      .follow-btn {
+        background: transparent;
+        color: #f97316;
+        border: 1.5px solid #f97316;
+        font-size: 0.78rem;
+        font-weight: 700;
+        padding: 5px 12px;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: all 0.2s ease;
+
+        &:hover {
+          background: var(--gradient-primary);
+          color: #ffffff;
+          border-color: transparent;
+          box-shadow: 0 4px 12px rgba(249, 115, 22, 0.35);
+        }
+
+        &:active {
+          transform: scale(0.95);
+        }
+      }
+
+      .reject-btn {
+        background: rgba(15, 23, 42, 0.05);
+        color: var(--text-secondary);
+        border: none;
+        outline: none;
+        font-size: 0.78rem;
+        font-weight: 700;
+        padding: 6px 12px;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: all 0.2s ease;
+
+        &:hover {
+          background: rgba(15, 23, 42, 0.1);
+          color: var(--text-primary);
+        }
+
+        &:active {
+          transform: scale(0.95);
+        }
+      }
+    }
+  }
+}

@@ -169,6 +169,45 @@ async function requestreject(req,res)
 
 }
 
+async function getSuggestion(req,res)
+{
+    const username = req.user.username
+
+    const follows = await followModel.find({
+        follower : username,
+
+    })
+
+    const excludelist = follows.map((follow)=>follow.followee)
+
+    excludelist.push(username)
+
+    const suggestions = await userModel.find({
+        username : {
+            $nin : excludelist
+        }
+    })
+
+    res.status(200).json({
+        message : "suggestion",
+        suggestions
+    })
+}
+
+async function getFollowing(req,res)
+{
+    const username = req.user.username
+
+    const following = await followModel.find({
+        follower : username,
+        status : "accepted"
+    })
+    res.status(200).json({
+        message : "folloing user",
+        following 
+    })
+
+}
 
 
 module.exports = {
@@ -176,6 +215,8 @@ module.exports = {
     unfolloweUserController,
     getPendingRequestsController,
     requestaccept,
-    requestreject
+    requestreject,
+    getSuggestion,
+    getFollowing
 
 }
