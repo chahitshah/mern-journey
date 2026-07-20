@@ -102,3 +102,17 @@ Located in `Backend Learning/project1/`, **AURA Space** is a custom social media
 * **Node.js & Express:** Structuring models-views-controllers (MVC), writing routing systems, and integrating CORS/cookie parsers.
 * **Mongoose & Database Design:** Modeling standard schemas, indexing unique columns, and populating referenced ObjectId documents.
 * **Security & Storage:** Managing user sessions with JWT, securing database passwords with Bcrypt, and writing custom auth verification middleware.
+
+---
+
+## 👤 About Me
+
+Hi, I'm **Chahit Shah**! 👋
+I am an aspiring **Full-Stack Developer** passionate about building clean, high-performance, and visually stunning web applications.
+
+* **🔭 I’m currently working on:** Building MERN-stack social applications and refining database relations.
+* **🌱 I’m currently learning:** Advanced backend architecture, database optimization, and modern UI/UX design trends (like glassmorphism, responsive grids, and transitions).
+* **💻 Technical Arsenal:** JavaScript (ES6+), React.js, Node.js, Express.js, MongoDB, SASS/SCSS, Git.
+* **📬 Connect with me:**
+  * GitHub: [@chahitshah](https://github.com/chahitshah)
+
