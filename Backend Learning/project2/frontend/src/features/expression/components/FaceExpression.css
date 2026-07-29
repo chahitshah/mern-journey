@@ -1,0 +1,163 @@
+/* =============================================
+   MOODIFY — FaceExpression  (Light Theme)
+   ============================================= */
+
+.face-expr {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+/* Video feed */
+.face-expr__video-wrap {
+  position: relative;
+  border-radius: 22px;
+  overflow: hidden;
+  width: 100%;
+  max-width: 380px;
+  border: 2px solid rgba(120,87,255,0.15);
+  box-shadow:
+    0 8px 32px rgba(120,87,255,0.12),
+    0 2px 8px rgba(0,0,0,0.06),
+    inset 0 1px 0 rgba(255,255,255,0.8);
+  background: #ede8ff;
+  aspect-ratio: 4 / 3;
+}
+
+.face-expr__video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transform: scaleX(-1); /* mirror for selfie */
+}
+
+/* Loading overlay */
+.face-expr__overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: rgba(247,245,255,0.88);
+  backdrop-filter: blur(8px);
+  gap: 12px;
+}
+
+.face-expr__spinner {
+  width: 36px; height: 36px;
+  border: 3px solid rgba(120,87,255,0.15);
+  border-top-color: #7857ff;
+  border-radius: 50%;
+  animation: spinnerRotate 0.8s linear infinite;
+}
+
+.face-expr__loading-text {
+  font-size: 13px;
+  font-weight: 600;
+  color: #7857ff;
+  letter-spacing: 0.2px;
+}
+
+/* Corner scanner lines */
+.face-expr__scanner {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.face-expr__scan-line {
+  position: absolute;
+  background: rgba(120,87,255,0.4);
+}
+.face-expr__scan-line--tl-h { top: 12px; left: 12px; width: 28px; height: 2px; border-radius: 2px; }
+.face-expr__scan-line--tl-v { top: 12px; left: 12px; width: 2px;  height: 28px; border-radius: 2px; }
+.face-expr__scan-line--tr-h { top: 12px; right: 12px; width: 28px; height: 2px; border-radius: 2px; }
+.face-expr__scan-line--tr-v { top: 12px; right: 12px; width: 2px;  height: 28px; border-radius: 2px; }
+.face-expr__scan-line--bl-h { bottom: 12px; left: 12px; width: 28px; height: 2px; border-radius: 2px; }
+.face-expr__scan-line--bl-v { bottom: 12px; left: 12px; width: 2px;  height: 28px; border-radius: 2px; }
+.face-expr__scan-line--br-h { bottom: 12px; right: 12px; width: 28px; height: 2px; border-radius: 2px; }
+.face-expr__scan-line--br-v { bottom: 12px; right: 12px; width: 2px;  height: 28px; border-radius: 2px; }
+
+/* Expression display */
+.face-expr__result {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  background: rgba(255,255,255,0.85);
+  border: 1px solid rgba(120,87,255,0.14);
+  border-radius: 999px;
+  box-shadow: 0 4px 16px rgba(120,87,255,0.10);
+  backdrop-filter: blur(12px);
+  font-size: 14px;
+  font-weight: 700;
+  color: #18114a;
+  min-width: 180px;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.face-expr__result-dot {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: #22c55e;
+  box-shadow: 0 0 6px #22c55e;
+  animation: blink 2s ease-in-out infinite;
+  flex-shrink: 0;
+}
+
+.face-expr__result-dot--loading {
+  background: #f59e0b;
+  box-shadow: 0 0 6px #f59e0b;
+}
+
+/* Detect button */
+.face-expr__btn {
+  width: 100%;
+  max-width: 380px;
+  padding: 13px 24px;
+  background: linear-gradient(135deg, #7857ff 0%, #a855f7 100%);
+  border: none;
+  border-radius: 14px;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 700;
+  font-family: 'Inter', sans-serif;
+  cursor: pointer;
+  letter-spacing: 0.2px;
+  box-shadow: 0 4px 16px rgba(120,87,255,0.30);
+  transition: all 0.22s cubic-bezier(0.34, 1.56, 0.64, 1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.face-expr__btn:hover:not(:disabled) {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 8px 28px rgba(120,87,255,0.42);
+}
+
+.face-expr__btn:active:not(:disabled) {
+  transform: translateY(1px) scale(0.99);
+}
+
+.face-expr__btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Animations */
+@keyframes spinnerRotate {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.2; }
+}
