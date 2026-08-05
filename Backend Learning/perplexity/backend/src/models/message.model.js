@@ -2,7 +2,7 @@ import mongoose from "mongoose"
 
 const messageSchema = new mongoose.Schema({
     chat :{
-        type:mongoose.Schema.type.ObjectId,
+        type:mongoose.Schema.Types.ObjectId,
         ref:'chat',
         required:true
     },
