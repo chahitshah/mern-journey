@@ -30,9 +30,9 @@ export async function register(req,res){
     const emailVerificationToken = jwt.sign({
         userId:user._id,
         email:user.email
-    },process.env.JWT_SECRET)
+    },process.env.JWT_SECRET,{expiresIn:"24h"})
 
-    res.cookie("token",emailVerificationToken)
+    //res.cookie("token",emailVerificationToken)
 
     await sendEmail({
         to: email,
@@ -75,15 +75,28 @@ export async function verifyEmail(req,res)
         })
     }
 
-    let decoded;
+    const verificationhtml = `
+        <h1>Verification Link Expired</h1>
+        <p>This verification link is no longer valid.</p>
+        <p>Please request a new verification email and try again.</p>
+    `
+    const Invalidverificationhtml = `
+        <h1>Invalid Verification Link</h1>
+        <p>This verification link is invalid or broken.</p>
+        <p>Please check your email link or request a new verification email.</p>
+    `
+
+    let decoded 
     try {
-        decoded = jwt.verify(token, process.env.JWT_SECRET)
-    } catch (err) {
-        return res.status(400).json({
-            message: "Invalid Token",
-            success: false,
-            err: "Token verification failed"
-        })
+        decoded = jwt.verify(token, process.env.JWT_SECRET);
+    } catch(err){
+        if(err.name ==="TokenExpiredError")
+        {
+            return res.status(400).send(verificationhtml)
+        }
+        else{
+            return res.status(400).send(Invalidverificationhtml)
+        }
     }
 
     const user = await userModel.findOne({ email: decoded.email })
@@ -97,7 +110,20 @@ export async function verifyEmail(req,res)
         })
     }
 
-    user.verified = true
+   
+    if(user.verified == true)
+    {
+        const alreadylogin =`
+            <h1>Email Already Verified</h1>
+            <p>Your email address has already been verified.</p>
+            <a href="http://localhost:3000/login">Go to Login</a>
+        `
+        return res.send(alreadylogin)
+
+    }
+    else
+    {
+        user.verified = true
 
     await user.save();
 
@@ -108,6 +134,9 @@ export async function verifyEmail(req,res)
         <a href="http://localhost:3000/login">Go to Login</a>
     `
     res.send(html)
+
+    }
+     
 }
 
 
@@ -156,7 +185,7 @@ export async function login(req,res)
 
     res.status(200).json({
         message:"Login successful",
-        sucess:true,
+        success:true,
         err:null,
         user:{
             id : user._id,
@@ -190,6 +219,79 @@ export async function getMe(req,res)
         user
     })
 
+
+}
+
+export async function resendVerificationEmail(req,res)
+{
+    const {email} = req.body
+
+    if(!email)
+    {
+        return res.status(400).json({
+            message :"Email is required",
+            success:false,
+            err:"Email not given"
+        })
+    }
+
+    const user = await userModel.findOne({email})
+
+    if(!user)
+    {
+        return res.status(200).json({
+            message : "If this email exists, a verification email has been sent",
+            success:true,
+            err:null
+        })
+    }
+
+    if(user.verified == true)
+    {
+        return res.status(200).json({
+            message : "Email already verified",
+            success:true,
+            err:null
+        })
+    }
+    else{
+
+        const token = jwt.sign({
+        userId: user._id,
+        username: user.username,
+        email:user.email
+    },process.env.JWT_SECRET,{expiresIn:"24h"})
+
+
+    await sendEmail({
+        to: email,
+        subject: "Welcome to Perplexity!",
+        html: `
+                <p>Hi ${user.username},</p>
+                <p>Thank you for registering at <strong>Perplexity</strong>. We're excited to have you on board!</p>
+                <p>Please verify your email address by clicking the link below:</p>
+                <a href="http://localhost:3000/api/auth/verify-email?token=${token}">Verify Email</a>
+                <p>If you did not sign up for this account, please ignore this email.</p>
+                <p>Thank you,<br>The Perplexity Team</p>
+                
+                
+                
+        `
+    })
+
+
+
+    }
+
+    res.status(200).json({
+        message: "Verification email sent successfully",
+        success: true,
+        user: {
+            id: user._id,
+            username: user.username,
+            email: user.email
+        }
+    });
 
 }
 
