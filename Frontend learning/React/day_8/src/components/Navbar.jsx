@@ -9,7 +9,7 @@ const Navbar = () => {
       <h1>Navbar</h1>
       <div className='flex gap-4 mr-5'>
         <Link className='' to="/">Home</Link>
-      <Link to="/cart" >Cart ({cart.length})</Link>
+        <Link to="/cart" >Cart ({cart.length})</Link>
       </div>
     </div>
   )

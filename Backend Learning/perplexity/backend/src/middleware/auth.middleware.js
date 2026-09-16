@@ -1,30 +1,32 @@
 import jwt from "jsonwebtoken"
 
-export function authUser(req,res,next)
-{
-    const token = req.cookies.token
+export function authUser(req, res, next) {
+    let token = req.cookies?.token
 
-    if(!token)
-    {
+    if (!token) {
+        const authHeader = req.headers.authorization
+        if (authHeader && authHeader.startsWith("Bearer ")) {
+            token = authHeader.split(" ")[1]
+        }
+    }
+
+    if (!token) {
         return res.status(401).json({
-            message:"Unauthorized access",
-            success:false,
-            err: "No Token provided"
+            message: "Unauthorized access",
+            success: false,
+            err: "No token provided"
         })
     }
 
-    let decoded=null 
-    try{
-        decoded = jwt.verify(token,process.env.JWT_SECRET)
+    try {
+        const decoded = jwt.verify(token, process.env.JWT_SECRET)
         req.user = decoded
         next()
-    }catch(err)
-    {
+    } catch (err) {
         return res.status(401).json({
-            message : "Unauthorized",
-            success:false,
-            err:"Invalid token"
+            message: "Unauthorized",
+            success: false,
+            err: "Invalid token"
         })
     }
-
 }
