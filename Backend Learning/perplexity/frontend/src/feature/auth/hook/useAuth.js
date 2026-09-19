@@ -40,10 +40,17 @@ export function useAuth(){
             dispatch(setLoading(true))
             const data = await getMe()
             dispatch(setUser(data.user))
+            dispatch(setError(null))
         }
         catch (err)
         {
+            if (err.response?.status === 401) {
+                dispatch(setUser(null))
+                dispatch(setError(null))
+                return false
+            }
             dispatch(setError(err.response?.data?.message || "failed to fetch user data"))
+            return false
         }finally{
             dispatch(setLoading(false))
         }
