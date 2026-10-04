@@ -1,0 +1,32 @@
+{
+    "matches": [
+        {
+            "id": "doc-0",
+            "score": 0.754645526,
+            "values": [],
+            "metadata": {
+                "text": "RAG Test Document\nThis document is intentionally created for testing a Retrieval-Augmented Generation (RAG) pipeline. It\ncontains factual information that can later beretrieved by a vector database and used by an LLM.\n1. What is RAG?\nRetrieval-Augmented Generation, commonly called RAG, is a technique that combines information\nretrieval with text generation. Instead of relying only on information learned during model training, a RAG"
+            }
+        },
+        {
+            "id": "doc-4",
+            "score": 0.748819768,
+            "values": [],
+            "metadata": {
+                "text": "When a user asks a question, the question can first be converted into an embedding. The retriever then\nsearches the vector store and returns the most relevant document chunks. These retrieved chunks\nbecome context for the language model.\n7. Generation\nThe language model receives the user's question together with the retrieved context. It uses that context\nto generate an answer. A well-designed RAG system should answer using the retrieved information\nrather than inventing unsupported facts."
+            }
+        },
+        {
+            "id": "doc-5",
+            "score": 0.73759228,
+            "values": [],
+            "metadata": {
+                "text": "-- 1 of 2 --\n\nTest Questions\nQuestion Expected source\nWhat is RAG? Section 1\nWhy do we use chunking? Section 3\nWhat does an embedding model produce? Section 4\nWhat is the purpose of a vector database? Section 5\nWhat happens during retrieval? Section 6\nWhat does the language model receive during generation? Section 7\n\n-- 2 of 2 --"
+            }
+        }
+    ],
+    "namespace": "__default__",
+    "usage": {
+        "readUnits": 1
+    }
+}

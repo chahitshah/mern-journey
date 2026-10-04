@@ -52,6 +52,14 @@ const Dashboard = () => {
     chat.handleSelectChat(chatId).catch(() => {})
   }
 
+  const handleDeleteChat = async (chatId, event) => {
+    if (event) {
+      event.stopPropagation()
+    }
+
+    await chat.handleDeleteChat(chatId).catch(() => {})
+  }
+
   const handleSubmit = async (event) => {
     event.preventDefault()
 
@@ -89,23 +97,45 @@ const Dashboard = () => {
 
           <nav className="flex flex-1 flex-col gap-2 overflow-y-auto">
             {chatList.map((item) => (
-              <button
-                className={`rounded-md px-3 py-2 text-left text-sm text-neutral-200 hover:bg-[#202020] ${
+              <div
+                className={`flex items-center justify-between gap-2 rounded-md px-3 py-2 text-sm text-neutral-200 hover:bg-[#202020] ${
                   item._id === currentChatId ? 'bg-[#202020]' : ''
                 }`}
                 key={item._id}
-                onClick={() => handleSelectChat(item._id)}
-                type="button"
               >
-                {item.title || 'Untitled chat'}
-              </button>
+                <button
+                  className="flex-1 overflow-hidden text-left truncate"
+                  onClick={() => handleSelectChat(item._id)}
+                  type="button"
+                >
+                  {item.title || 'Untitled chat'}
+                </button>
+
+                <button
+                  className="rounded border border-[#555] px-2 py-1 text-[11px] text-neutral-300 hover:bg-[#2a2a2a]"
+                  onClick={(event) => handleDeleteChat(item._id, event)}
+                  type="button"
+                >
+                  Delete
+                </button>
+              </div>
             ))}
           </nav>
         </aside>
 
         <section className="flex min-w-0 flex-1 flex-col bg-[#181818]">
-          <header className="flex h-14 items-center border-b border-[#343434] px-5">
+          <header className="flex h-14 items-center justify-between border-b border-[#343434] px-5">
             <h2 className="text-sm font-medium">{currentChat?.title || 'New chat'}</h2>
+
+            {currentChatId && (
+              <button
+                className="rounded border border-[#666] px-2 py-1 text-[11px]"
+                onClick={() => handleDeleteChat(currentChatId)}
+                type="button"
+              >
+                Delete chat
+              </button>
+            )}
           </header>
 
           <div className="flex flex-1 flex-col gap-5 overflow-y-auto px-6 py-6">
