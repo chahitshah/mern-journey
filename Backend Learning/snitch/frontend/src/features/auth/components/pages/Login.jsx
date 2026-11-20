@@ -96,7 +96,6 @@ export default function Login() {
         <p className="auth-switch">
           New to Snitch? <Link to="/register">Create an account</Link>
         </p>
-        <p className="auth-legal">Your details stay private and secure.</p>
       </section>
     </main>
   );

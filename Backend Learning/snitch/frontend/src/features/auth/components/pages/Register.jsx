@@ -141,7 +141,6 @@ export default function Register() {
         <p className="auth-switch">
           Already have an account? <Link to="/login">Sign in</Link>
         </p>
-        <p className="auth-legal">By continuing, you agree to our terms and privacy policy.</p>
       </section>
     </main>
   );

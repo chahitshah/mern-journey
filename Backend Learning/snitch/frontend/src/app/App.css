@@ -237,14 +237,6 @@ a {
   text-underline-offset: 3px;
 }
 
-.auth-legal {
-  margin: 23px 0 0;
-  color: #a0a49d;
-  font-size: 10px;
-  line-height: 1.5;
-  text-align: center;
-}
-
 .form-message {
   margin: -2px 0 0;
   font-size: 12px;
